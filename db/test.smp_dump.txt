@@ -1,0 +1,95 @@
+
+State Machine - |test|top_level:top|vga_interface:m2|state_q
+Name state_q.delay state_q.display state_q.idle 
+state_q.delay 0 0 0 
+state_q.idle 1 0 1 
+state_q.display 1 1 0 
+
+State Machine - |test|top_level:top|sdram_interface:m1|sdram_controller:m0|nxt_q
+Name nxt_q.refresh nxt_q.write nxt_q.read_data nxt_q.read nxt_q.idle nxt_q.load_mode_reg nxt_q.refresh_2 nxt_q.refresh_1 nxt_q.precharge_init nxt_q.start 
+nxt_q.start 0 0 0 0 0 0 0 0 0 0 
+nxt_q.precharge_init 0 0 0 0 0 0 0 0 1 1 
+nxt_q.refresh_1 0 0 0 0 0 0 0 1 0 1 
+nxt_q.refresh_2 0 0 0 0 0 0 1 0 0 1 
+nxt_q.load_mode_reg 0 0 0 0 0 1 0 0 0 1 
+nxt_q.idle 0 0 0 0 1 0 0 0 0 1 
+nxt_q.read 0 0 0 1 0 0 0 0 0 1 
+nxt_q.read_data 0 0 1 0 0 0 0 0 0 1 
+nxt_q.write 0 1 0 0 0 0 0 0 0 1 
+nxt_q.refresh 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |test|top_level:top|sdram_interface:m1|sdram_controller:m0|state_q
+Name state_q.delay state_q.refresh state_q.write_burst state_q.write state_q.read_data state_q.read state_q.idle state_q.load_mode_reg state_q.refresh_2 state_q.refresh_1 state_q.precharge_init state_q.start 
+state_q.start 0 0 0 0 0 0 0 0 0 0 0 0 
+state_q.precharge_init 0 0 0 0 0 0 0 0 0 0 1 1 
+state_q.refresh_1 0 0 0 0 0 0 0 0 0 1 0 1 
+state_q.refresh_2 0 0 0 0 0 0 0 0 1 0 0 1 
+state_q.load_mode_reg 0 0 0 0 0 0 0 1 0 0 0 1 
+state_q.idle 0 0 0 0 0 0 1 0 0 0 0 1 
+state_q.read 0 0 0 0 0 1 0 0 0 0 0 1 
+state_q.read_data 0 0 0 0 1 0 0 0 0 0 0 1 
+state_q.write 0 0 0 1 0 0 0 0 0 0 0 1 
+state_q.write_burst 0 0 1 0 0 0 0 0 0 0 0 1 
+state_q.refresh 0 1 0 0 0 0 0 0 0 0 0 1 
+state_q.delay 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |test|top_level:top|camera_interface:m0|sccb_state_q
+Name sccb_state_q.sccb_data sccb_state_q.sccb_address sccb_state_q.sccb_idle sccb_state_q.wait_init sccb_state_q.sccb_stop 
+sccb_state_q.wait_init 0 0 0 0 0 
+sccb_state_q.sccb_idle 0 0 1 1 0 
+sccb_state_q.sccb_address 0 1 0 1 0 
+sccb_state_q.sccb_data 1 0 0 1 0 
+sccb_state_q.sccb_stop 0 0 0 1 1 
+
+State Machine - |test|top_level:top|camera_interface:m0|state_q
+Name state_q.fifo_write state_q.byte2 state_q.byte1 state_q.vsync_fedge state_q.delay state_q.digest_loop state_q.write_data state_q.write_address state_q.start_sccb state_q.idle 
+state_q.idle 0 0 0 0 0 0 0 0 0 0 
+state_q.start_sccb 0 0 0 0 0 0 0 0 1 1 
+state_q.write_address 0 0 0 0 0 0 0 1 0 1 
+state_q.write_data 0 0 0 0 0 0 1 0 0 1 
+state_q.digest_loop 0 0 0 0 0 1 0 0 0 1 
+state_q.delay 0 0 0 0 1 0 0 0 0 1 
+state_q.vsync_fedge 0 0 0 1 0 0 0 0 0 1 
+state_q.byte1 0 0 1 0 0 0 0 0 0 1 
+state_q.byte2 0 1 0 0 0 0 0 0 0 1 
+state_q.fifo_write 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |test|top_level:top|camera_interface:m0|debounce_explicit:m6|state_reg
+Name state_reg.delay1 state_reg.one state_reg.delay0 state_reg.idle 
+state_reg.idle 0 0 0 0 
+state_reg.delay0 0 0 1 1 
+state_reg.one 0 1 0 1 
+state_reg.delay1 1 0 0 1 
+
+State Machine - |test|top_level:top|camera_interface:m0|debounce_explicit:m5|state_reg
+Name state_reg.delay1 state_reg.one state_reg.delay0 state_reg.idle 
+state_reg.idle 0 0 0 0 
+state_reg.delay0 0 0 1 1 
+state_reg.one 0 1 0 1 
+state_reg.delay1 1 0 0 1 
+
+State Machine - |test|top_level:top|camera_interface:m0|debounce_explicit:m4|state_reg
+Name state_reg.delay1 state_reg.one state_reg.delay0 state_reg.idle 
+state_reg.idle 0 0 0 0 
+state_reg.delay0 0 0 1 1 
+state_reg.one 0 1 0 1 
+state_reg.delay1 1 0 0 1 
+
+State Machine - |test|top_level:top|camera_interface:m0|debounce_explicit:m3|state_reg
+Name state_reg.delay1 state_reg.one state_reg.delay0 state_reg.idle 
+state_reg.idle 0 0 0 0 
+state_reg.delay0 0 0 1 1 
+state_reg.one 0 1 0 1 
+state_reg.delay1 1 0 0 1 
+
+State Machine - |test|top_level:top|camera_interface:m0|i2c_top:m0|state_q
+Name state_q.stop_1 state_q.ack_master state_q.read state_q.renew_data state_q.ack_servant state_q.packet state_q.starting state_q.idle state_q.stop_2 
+state_q.idle 0 0 0 0 0 0 0 0 0 
+state_q.starting 0 0 0 0 0 0 1 1 0 
+state_q.packet 0 0 0 0 0 1 0 1 0 
+state_q.ack_servant 0 0 0 0 1 0 0 1 0 
+state_q.renew_data 0 0 0 1 0 0 0 1 0 
+state_q.read 0 0 1 0 0 0 0 1 0 
+state_q.ack_master 0 1 0 0 0 0 0 1 0 
+state_q.stop_1 1 0 0 0 0 0 0 1 0 
+state_q.stop_2 0 0 0 0 0 0 0 1 1 

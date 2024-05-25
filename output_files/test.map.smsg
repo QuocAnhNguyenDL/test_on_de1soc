@@ -1,0 +1,5 @@
+Warning (10268): Verilog HDL information at asyn_fifo.v(39): always construct contains both blocking and non-blocking assignments File: D:/test/asyn_fifo.v Line: 39
+Warning (10268): Verilog HDL information at asyn_fifo.v(71): always construct contains both blocking and non-blocking assignments File: D:/test/asyn_fifo.v Line: 71
+Info (10281): Verilog HDL Declaration information at test.v(20): object "VGA_R" differs only in case from object "vga_r" in the same scope File: D:/test/test.v Line: 20
+Info (10281): Verilog HDL Declaration information at test.v(21): object "VGA_G" differs only in case from object "vga_g" in the same scope File: D:/test/test.v Line: 21
+Info (10281): Verilog HDL Declaration information at test.v(22): object "VGA_B" differs only in case from object "vga_b" in the same scope File: D:/test/test.v Line: 22
